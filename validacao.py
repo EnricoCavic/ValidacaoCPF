@@ -1,9 +1,6 @@
 import os
 import random
 
-def clear():
-    os.system('cls')
-
 def cpf_validado(cpf):
     cpf = list(cpf)
     primeiro_digito = calcular_proximo(cpf)
@@ -30,8 +27,7 @@ def calcular_proximo(digitos : list):
 
     # Se o resultado > 9 ele deve ser zero
     # Else o resultado não é alterado
-    digito_gerado = 0 if sobra > 9 else sobra
-    return str(digito_gerado)
+    return str(0 if sobra > 9 else sobra)
 
 def gerar(gerar_valido = False):
     retorno_cpf_gerado = ['','']
@@ -51,7 +47,7 @@ def gerar(gerar_valido = False):
 
     return retorno_cpf_gerado
 
-clear()
+os.system('cls')
 while(True):
     # Coletar a soma dos 9 primeiros digitos do cpf
     cpf_input = input('Digite [exit] ou [e] para sair\nDigite um CPF:')
